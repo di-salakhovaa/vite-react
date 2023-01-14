@@ -1,28 +1,34 @@
-// function Header () {
-//     return (
-//         <header>
-//             <h1>Header</h1>
-//             <p>This is a paragraph</p>
-//         </header>
-//     );
-// }
+const MENU = [
+    {
+        name: "Home",
+        path: "/home"
+    },
+    {
+        name: "About",
+        path: "/about"
+    },
+    {
+        name: "Donate",
+        path: "/donate"
+    }
+];
 
-// export default Header;
-
-// export function Header () {
-//     return (
-//         <header>
-//             <h1>Header</h1>
-//             <p>This is a paragraph</p>
-//         </header>
-//     );
-// }
+console.log(MENU);
 
 const Header = () => {
     return (
         <header>
-            <h1>Header</h1>
-            <p>This is a paragraph</p>
+            <nav>
+                <ul>
+                    {
+                        MENU.map((item) => {
+                            return (
+                                <li key={item.name}><a href={item.path}>{item.name}</a></li>
+                            );
+                        })
+                    }
+                </ul>
+            </nav>
         </header>
     );
 }
